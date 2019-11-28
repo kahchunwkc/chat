@@ -20,7 +20,7 @@ public class chat extends JFrame {
         frame.setVisible(true);
         frame.setResizable(false);
         frame.setLayout(null);
-        frame.setSize(1000, 600);
+        frame.setSize(600, 600);
         frame.add(chatarea);
         frame.add(chatbox);
         
