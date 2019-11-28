@@ -1,0 +1,92 @@
+package javaapplication48;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.Random;
+import javax.swing.JFrame;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+
+public class chat extends JFrame {
+
+    
+
+    private JTextArea chatarea = new JTextArea();
+    private JTextField chatbox = new JTextField();
+
+    public chat() {
+        JFrame frame = new JFrame();
+        frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        frame.setVisible(true);
+        frame.setResizable(false);
+        frame.setLayout(null);
+        frame.setSize(1000, 600);
+        frame.add(chatarea);
+        frame.add(chatbox);
+        
+        chatarea.setSize(500, 400);
+        chatarea.setLocation(50, 20);
+        chatbox.setLocation(50, 450);
+        chatbox.setSize(500, 30);
+        chatbox.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent arg0) {
+                String msgin = chatbox.getText();
+                chatarea.append("YOU->" + msgin + "\n");
+                chatbox.setText("");
+                if (msgin.equalsIgnoreCase("Hi")) {
+                    chat("Hello");
+                } else if (msgin.contains("hungry")) {
+                    chat("yes");
+
+                } else {
+                    Random r = new Random();
+                    int ran = r.nextInt(12);
+                    if (ran == 0) {
+                        chat("meow");
+
+                    } else if (ran == 1) {
+                        chat("meow meow");
+
+                    } else if (ran == 2) {
+                        chat("meow?");
+
+                    } else if (ran == 3) {
+                        chat("meow!");
+                    }else if (ran == 4) {
+                        chat("meow@");
+                    }else if (ran == 5) {
+                        chat("meow&");
+                    }else if (ran == 6) {
+                        chat("meow#");
+                    }else if (ran == 7) {
+                        chat("meow:)");
+                    }else if (ran == 8) {
+                        chat("meow:(");
+                    }else if (ran == 9) {
+                        chat("mmmeeeooowww");
+                    }else if (ran == 10) {
+                        chat("meowow");
+                    }else if (ran == 11) {
+                        chat("meow*");
+                    }else if (ran == 12) {
+                        chat("meow$");
+                    }
+
+                }
+            }
+        }
+        );
+
+    }
+
+    private void chat(String string) {
+        chatarea.append("CAT ฅ^•ﻌ•^ฅ->" + string + "\n");
+
+    }
+
+    public static void main(String args[]) {
+        new chat();
+    }
+
+}
